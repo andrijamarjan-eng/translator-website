@@ -14,13 +14,13 @@ export default function Hero() {
     {
       icon: Mail,
       label: 'Email Address',
-      value: 'info@translator.rs',
-      href: 'mailto:info@translator.rs',
+      value: 'zorana.kozomaric@gmai.com',
+      href: 'mailto:zorana.kozomaric@gmai.com',
     },
     {
       icon: Clock,
       label: 'Working Hours',
-      value: 'Mon-Fri: 8:00 AM - 6:00 PM',
+      value: 'Mon-Fri: 9:00 AM - 6:00 PM',
       href: null,
     },
     {
