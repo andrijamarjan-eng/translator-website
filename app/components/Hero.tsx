@@ -15,7 +15,7 @@ export default function Hero() {
       icon: Mail,
       label: 'Email Address',
       value: 'zorana.kozomaric@gmail.com',
-      href: 'mailto:zorana.kozomaric@gmai.com',
+      href: 'mailto:zorana.kozomaric@gmail.com',
     },
     {
       icon: Clock,
@@ -114,7 +114,7 @@ export default function Hero() {
             <Phone className="inline mr-2" size={20} />
             Call Now
           </a>
-          <a href="mailto:info@translator.rs" className="btn-secondary text-center">
+          <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center">
             <Mail className="inline mr-2" size={20} />
             Send Email
           </a>
