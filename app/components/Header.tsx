@@ -3,15 +3,25 @@
 import { useState } from 'react'
 import { Phone, Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { translations } from '../translations'
 
-export default function Header() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function Header({
+  language,
+  setLanguage,
+}: {
+  language: Language
+  setLanguage: (lang: Language) => void
+}) {
   const [isOpen, setIsOpen] = useState(false)
 
+  const t = translations[language]
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'Prices', href: '#prices' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.nav.home, href: '#home' },
+    { label: t.nav.services, href: '#services' },
+    { label: t.nav.prices, href: '#prices' },
+    { label: t.nav.contact, href: '#contact' },
   ]
 
   return (
@@ -35,14 +45,32 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA Button - Desktop */}
-        <a
-          href="tel:+381641234567"
-          className="hidden md:flex items-center gap-2 btn-primary"
-        >
-          <Phone size={20} />
-          Call Now
-        </a>
+        {/* Language Switcher + CTA - Desktop */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex gap-2">
+            {(['sr', 'de', 'en'] as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang)}
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
+                  language === lang
+                    ? 'bg-accent text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+          <a
+            href="tel:+381641234567"
+            className="flex items-center gap-2 btn-primary"
+          >
+            <Phone size={20} />
+            {t.nav.callNow}
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -73,13 +101,34 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+
+            {/* Mobile Language Switcher */}
+            <div className="flex gap-2 py-2">
+              {(['sr', 'de', 'en'] as Language[]).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => {
+                    setLanguage(lang)
+                    setIsOpen(false)
+                  }}
+                  className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
+                    language === lang
+                      ? 'bg-accent text-white'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  {lang.toUpperCase()}
+                </button>
+              ))}
+            </div>
+
             <a
               href="tel:+381641234567"
               className="block w-full text-center btn-primary mt-4"
               onClick={() => setIsOpen(false)}
             >
               <Phone className="inline mr-2" size={18} />
-              Call Now
+              {t.nav.callNow}
             </a>
           </div>
         </motion.div>

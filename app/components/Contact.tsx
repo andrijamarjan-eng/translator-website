@@ -2,32 +2,37 @@
 
 import { motion } from 'framer-motion'
 import { Phone, Mail, Clock, MapPin } from 'lucide-react'
+import { translations } from '../translations'
 
-export default function Contact() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function Contact({ language }: { language: Language }) {
+  const t = translations[language]
+
   const contactInfo = [
     {
       icon: Phone,
-      label: 'Phone',
+      label: t.contact.phone,
       value: '+381 64 123 4567',
       href: 'tel:+381641234567',
     },
     {
       icon: Mail,
-      label: 'Email',
+      label: t.contact.email,
       value: 'zorana.kozomaric@gmail.com',
       href: 'mailto:zorana.kozomaric@gmail.com',
     },
     {
       icon: Clock,
-      label: 'Working Hours',
-      value: 'Mon-Fri: 8:00 AM - 6:00 PM\nSat: 10:00 AM - 2:00 PM',
+      label: t.contact.hours,
+      value: `${t.contact.mondayFriday}: 8:00 AM - 6:00 PM\n${t.contact.saturday}: 10:00 AM - 2:00 PM`,
       href: null,
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Knez miletina 32, Beograd',
-      href: 'https://maps.google.com/?q=Knez+miletina+32+Beograd+Serbia',
+      label: t.contact.location,
+      value: 'Knez Miletina 32, Beograd',
+      href: 'https://maps.google.com/?q=Knez+Miletina+32+Beograd+Serbia',
     },
   ]
 
@@ -42,9 +47,9 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-gray-900 mb-4">{t.contact.title}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to discuss your translation project? Contact me today.
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -77,7 +82,7 @@ export default function Contact() {
                 )
 
                 return info.href ? (
-                  
+                  <a
                     key={info.label}
                     href={info.href}
                     className="hover:text-accent transition-colors duration-300"
@@ -98,7 +103,7 @@ export default function Contact() {
               className="inline-block btn-primary mt-10"
             >
               <Phone className="inline mr-2" size={20} />
-              Call Now
+              {t.contact.callNow}
             </motion.a>
           </motion.div>
 

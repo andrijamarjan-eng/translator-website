@@ -9,49 +9,22 @@ import {
   Users,
   Zap,
 } from 'lucide-react'
+import { translations } from '../translations'
 
-export default function Services() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function Services({ language }: { language: Language }) {
+  const t = translations[language]
+
   const services = [
-    {
-      icon: ArrowLeftRight,
-      title: 'German → Serbian',
-      description: 'Professional translation from German to Serbian with attention to detail and cultural nuances.',
-    },
-    {
-      icon: ArrowLeftRight,
-      title: 'Serbian → German',
-      description: 'Expert translation from Serbian to German for business, legal, and personal documents.',
-    },
-    {
-      icon: Shield,
-      title: 'Certified Translations',
-      description: 'Official certified translations for government, immigration, and legal purposes.',
-    },
-    {
-      icon: FileText,
-      title: 'Legal Documents',
-      description: 'Contracts, agreements, certificates, permits, and other legal documentation.',
-    },
-    {
-      icon: Users,
-      title: 'Personal Documents',
-      description: 'Resumes, cover letters, birth certificates, and personal correspondence.',
-    },
-    {
-      icon: Briefcase,
-      title: 'Business Documents',
-      description: 'Marketing materials, technical documentation, emails, and business correspondence.',
-    },
-    {
-      icon: Zap,
-      title: 'Technical Translations',
-      description: 'Software, manuals, technical specifications, and specialized documentation.',
-    },
-    {
-      icon: FileText,
-      title: 'Other Services',
-      description: 'Proofreading, editing, localization, and other translation-related services.',
-    },
+    { icon: ArrowLeftRight, title: t.services.de_sr, description: t.services.de_sr_desc },
+    { icon: ArrowLeftRight, title: t.services.sr_de, description: t.services.sr_de_desc },
+    { icon: Shield, title: t.services.certified, description: t.services.certified_desc },
+    { icon: FileText, title: t.services.legal, description: t.services.legal_desc },
+    { icon: Users, title: t.services.personal, description: t.services.personal_desc },
+    { icon: Briefcase, title: t.services.business, description: t.services.business_desc },
+    { icon: Zap, title: t.services.technical, description: t.services.technical_desc },
+    { icon: FileText, title: t.services.other, description: t.services.other_desc },
   ]
 
   const containerVariants = {
@@ -85,9 +58,9 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">Our Services</h2>
+          <h2 className="text-gray-900 mb-4">{t.services.title}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive translation solutions tailored to your specific needs
+            {t.services.subtitle}
           </p>
         </motion.div>
 

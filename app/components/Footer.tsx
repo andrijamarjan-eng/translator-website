@@ -2,9 +2,12 @@
 
 import { Phone, Mail, Clock } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { translations } from '../translations'
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear()
+type Language = 'sr' | 'de' | 'en'
+
+export default function Footer({ language }: { language: Language }) {
+  const t = translations[language]
 
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-16">
@@ -18,7 +21,7 @@ export default function Footer() {
         >
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+            <h3 className="font-semibold text-lg mb-4">{t.footer.contact}</h3>
             <div className="space-y-3">
               <a
                 href="tel:+381641234567"
@@ -28,47 +31,47 @@ export default function Footer() {
                 +381 64 123 4567
               </a>
               <a
-                href="mailto:info@translator.rs"
+                href="mailto:zorana.kozomaric@gmail.com"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                info@translator.rs
+                zorana.kozomaric@gmail.com
               </a>
             </div>
           </div>
 
           {/* Working Hours */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Hours</h3>
+            <h3 className="font-semibold text-lg mb-4">{t.footer.hours}</h3>
             <div className="space-y-2 text-gray-300">
               <p className="flex items-start gap-3">
                 <Clock size={18} className="mt-0.5 flex-shrink-0" />
                 <span>
-                  Monday - Friday<br />
+                  {t.contact.mondayFriday}<br />
                   8:00 AM - 6:00 PM
                 </span>
               </p>
               <p className="text-sm text-gray-400 ml-9">
-                Saturday 10:00 AM - 2:00 PM
+                {t.contact.saturday} 10:00 AM - 2:00 PM
               </p>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">{t.footer.quickLinks}</h3>
             <div className="space-y-2">
               <a href="#home" className="block text-gray-300 hover:text-white transition-colors">
-                Home
+                {t.footer.home}
               </a>
               <a href="#services" className="block text-gray-300 hover:text-white transition-colors">
-                Services
+                {t.footer.services}
               </a>
               <a href="#prices" className="block text-gray-300 hover:text-white transition-colors">
-                Prices
+                {t.footer.prices}
               </a>
               <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">
-                Contact
+                {t.footer.contact_link}
               </a>
             </div>
           </div>
@@ -83,10 +86,10 @@ export default function Footer() {
           className="text-center text-gray-400 text-sm"
         >
           <p>
-            © {currentYear} Professional Translator. All rights reserved.
+            {t.footer.copyright}
           </p>
           <p className="mt-2 text-xs">
-            German - Serbian Translation Services
+            {t.footer.description}
           </p>
         </motion.div>
       </div>

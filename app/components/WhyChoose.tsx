@@ -9,39 +9,20 @@ import {
   Lock,
   DollarSign,
 } from 'lucide-react'
+import { translations } from '../translations'
 
-export default function WhyChoose() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function WhyChoose({ language }: { language: Language }) {
+  const t = translations[language]
+
   const benefits = [
-    {
-      icon: Star,
-      title: 'Years of Experience',
-      description: 'Over 15+ years of professional translation experience in German-Serbian language pair.',
-    },
-    {
-      icon: Zap,
-      title: 'Fast Turnaround',
-      description: 'Quick translation delivery without compromising on quality. Urgent orders welcome.',
-    },
-    {
-      icon: MessageSquare,
-      title: 'Reliable Communication',
-      description: 'Always available to discuss your project requirements and answer your questions.',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Professional Quality',
-      description: 'Native speaker quality with meticulous attention to cultural context and terminology.',
-    },
-    {
-      icon: Lock,
-      title: 'Confidentiality',
-      description: 'Your documents are completely confidential. We respect privacy and data security.',
-    },
-    {
-      icon: DollarSign,
-      title: 'Competitive Prices',
-      description: 'Transparent pricing with no hidden fees. Fair rates for professional quality work.',
-    },
+    { icon: Star, title: t.whyChoose.experience, description: t.whyChoose.experience_desc },
+    { icon: Zap, title: t.whyChoose.turnaround, description: t.whyChoose.turnaround_desc },
+    { icon: MessageSquare, title: t.whyChoose.communication, description: t.whyChoose.communication_desc },
+    { icon: CheckCircle, title: t.whyChoose.quality, description: t.whyChoose.quality_desc },
+    { icon: Lock, title: t.whyChoose.confidentiality, description: t.whyChoose.confidentiality_desc },
+    { icon: DollarSign, title: t.whyChoose.prices, description: t.whyChoose.prices_desc },
   ]
 
   const containerVariants = {
@@ -75,9 +56,9 @@ export default function WhyChoose() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">Why Choose Me</h2>
+          <h2 className="text-gray-900 mb-4">{t.whyChoose.title}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Key advantages that make me your trusted translation partner
+            {t.whyChoose.subtitle}
           </p>
         </motion.div>
 

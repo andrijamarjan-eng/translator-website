@@ -2,31 +2,36 @@
 
 import { Phone, Mail, Clock, DollarSign } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { translations } from '../translations'
 
-export default function Hero() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function Hero({ language }: { language: Language }) {
+  const t = translations[language]
+
   const infoCards = [
     {
       icon: Phone,
-      label: 'Phone Number',
+      label: t.hero.phone,
       value: '+381 64 123 4567',
       href: 'tel:+381641234567',
     },
     {
       icon: Mail,
-      label: 'Email Address',
+      label: t.hero.email,
       value: 'zorana.kozomaric@gmail.com',
       href: 'mailto:zorana.kozomaric@gmail.com',
     },
     {
       icon: Clock,
-      label: 'Working Hours',
+      label: t.hero.hours,
       value: 'Mon-Fri: 9:00 AM - 6:00 PM',
       href: null,
     },
     {
       icon: DollarSign,
-      label: 'Prices',
-      value: 'From €0.05 per word',
+      label: t.hero.prices,
+      value: 'From 2.000 dinara',
       href: '#prices',
     },
   ]
@@ -62,10 +67,10 @@ export default function Hero() {
           className="text-center mb-12 sm:mb-16"
         >
           <h1 className="text-white mb-4 leading-tight font-bold text-5xl sm:text-6xl lg:text-7xl">
-            Professional German–Serbian<br />Translation Services
+            {t.hero.title}
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
-            Expert translations for documents, legal texts, business correspondence, and more. Fast turnaround, certified quality, competitive prices.
+            {t.hero.subtitle}
           </p>
         </motion.div>
 
@@ -112,11 +117,11 @@ export default function Hero() {
         >
           <a href="tel:+381641234567" className="btn-primary text-center hover:shadow-2xl transition-all">
             <Phone className="inline mr-2" size={20} />
-            Call Now
+            {t.hero.callNow}
           </a>
           <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center hover:shadow-2xl transition-all">
             <Mail className="inline mr-2" size={20} />
-            Send Email
+            {t.hero.sendEmail}
           </a>
         </motion.div>
       </div>

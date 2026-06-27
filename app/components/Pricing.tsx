@@ -2,61 +2,42 @@
 
 import { motion } from 'framer-motion'
 import { Check, Phone } from 'lucide-react'
+import { translations } from '../translations'
 
-export default function Pricing() {
+type Language = 'sr' | 'de' | 'en'
+
+export default function Pricing({ language }: { language: Language }) {
+  const t = translations[language]
+
   const pricingPlans = [
     {
-      name: 'Standard Translation',
+      name: t.pricing.standard,
       price: '2.000',
       unit: 'dinara per page',
-      description: 'Professional translation quality',
-      features: [
-        'Accurate translation',
-        'Professional quality',
-        '2-3 day turnaround',
-        'Unlimited revisions',
-        'Competitive rates',
-      ],
+      description: t.pricing.standard_desc,
+      features: ['Accurate translation', 'Professional quality', '2-3 day turnaround', 'Unlimited revisions', 'Competitive rates'],
     },
     {
-      name: 'Certified Translation',
+      name: t.pricing.certified,
       price: '3.000',
       unit: 'dinara per page',
-      description: 'Official certified translations',
-      features: [
-        'Official certification',
-        'Legal documents support',
-        '24-48 hour turnaround',
-        'Stamped & notarized',
-        'Government approved',
-      ],
+      description: t.pricing.certified_desc,
+      features: ['Official certification', 'Legal documents support', '24-48 hour turnaround', 'Stamped & notarized', 'Government approved'],
       highlighted: true,
     },
     {
-      name: 'Urgent Service',
+      name: t.pricing.urgent,
       price: '4.000',
       unit: 'dinara per page',
-      description: 'Rush translation service',
-      features: [
-        'Same-day delivery',
-        'Priority handling',
-        'Premium quality',
-        '24/7 availability',
-        'Direct communication',
-      ],
+      description: t.pricing.urgent_desc,
+      features: ['Same-day delivery', 'Priority handling', 'Premium quality', '24/7 availability', 'Direct communication'],
     },
     {
-      name: 'Custom Quote',
+      name: t.pricing.custom,
       price: 'Custom',
       unit: 'Negotiable',
-      description: 'Large projects or special requirements',
-      features: [
-        'Volume discounts',
-        'Long-term contracts',
-        'Specialized terminology',
-        'Project management',
-        'Bulk pricing',
-      ],
+      description: t.pricing.custom_desc,
+      features: ['Volume discounts', 'Long-term contracts', 'Specialized terminology', 'Project management', 'Bulk pricing'],
     },
   ]
 
@@ -91,9 +72,9 @@ export default function Pricing() {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">Transparent Pricing</h2>
+          <h2 className="text-gray-900 mb-4">{t.pricing.title}</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Competitive rates with no hidden fees. Choose the service that fits your needs.
+            {t.pricing.subtitle}
           </p>
         </motion.div>
 
@@ -160,7 +141,7 @@ export default function Pricing() {
               </ul>
 
               {/* CTA Button */}
-              
+              <a
                 href="tel:+381641234567"
                 className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 ${
                   plan.highlighted
@@ -169,7 +150,7 @@ export default function Pricing() {
                 }`}
               >
                 <Phone size={18} />
-                Contact
+                {t.pricing.contact}
               </a>
             </motion.div>
           ))}
@@ -184,7 +165,7 @@ export default function Pricing() {
           className="text-center mt-12 sm:mt-16"
         >
           <p className="text-gray-600 max-w-2xl mx-auto">
-            All prices are subject to negotiation based on project complexity, volume, and deadlines. Contact me for a free quote on your specific project.
+            {t.pricing.note}
           </p>
         </motion.div>
       </div>
