@@ -52,7 +52,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-white">
+    <section id="home" className="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-gradient-to-r from-gray-100 to-gray-300">
       <div className="container-wide">
         {/* Headline */}
         <motion.div
