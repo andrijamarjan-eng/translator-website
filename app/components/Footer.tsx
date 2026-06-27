@@ -10,14 +10,14 @@ export default function Footer({ language }: { language: Language }) {
   const t = translations[language]
 
   return (
-    <footer className="bg-gray-900 text-white py-12 sm:py-16">
+    <footer className="bg-navy text-lightest py-12 sm:py-16 border-t border-white/10">
       <div className="container-wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-12 pb-12 border-b border-gray-700"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 mb-12 pb-12 border-b border-white/10"
         >
           {/* Contact Info */}
           <div>
@@ -25,14 +25,14 @@ export default function Footer({ language }: { language: Language }) {
             <div className="space-y-3">
               <a
                 href="tel:+381641234567"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-slate hover:text-accent transition-colors"
               >
                 <Phone size={18} />
                 +381 64 123 4567
               </a>
               <a
                 href="mailto:zorana.kozomaric@gmail.com"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors"
+                className="flex items-center gap-3 text-slate hover:text-accent transition-colors"
               >
                 <Mail size={18} />
                 zorana.kozomaric@gmail.com
@@ -43,7 +43,7 @@ export default function Footer({ language }: { language: Language }) {
           {/* Working Hours */}
           <div>
             <h3 className="font-semibold text-lg mb-4">{t.footer.hours}</h3>
-            <div className="space-y-2 text-gray-300">
+            <div className="space-y-2 text-slate">
               <p className="flex items-start gap-3">
                 <Clock size={18} className="mt-0.5 flex-shrink-0" />
                 <span>
@@ -51,7 +51,7 @@ export default function Footer({ language }: { language: Language }) {
                   8:00 AM - 6:00 PM
                 </span>
               </p>
-              <p className="text-sm text-gray-400 ml-9">
+              <p className="text-sm text-slate/70 ml-9">
                 {t.contact.saturday} 10:00 AM - 2:00 PM
               </p>
             </div>
@@ -61,16 +61,16 @@ export default function Footer({ language }: { language: Language }) {
           <div>
             <h3 className="font-semibold text-lg mb-4">{t.footer.quickLinks}</h3>
             <div className="space-y-2">
-              <a href="#home" className="block text-gray-300 hover:text-white transition-colors">
+              <a href="#home" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.home}
               </a>
-              <a href="#services" className="block text-gray-300 hover:text-white transition-colors">
+              <a href="#services" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.services}
               </a>
-              <a href="#prices" className="block text-gray-300 hover:text-white transition-colors">
+              <a href="#prices" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.prices}
               </a>
-              <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">
+              <a href="#contact" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.contact_link}
               </a>
             </div>
@@ -83,7 +83,7 @@ export default function Footer({ language }: { language: Language }) {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center text-gray-400 text-sm"
+          className="text-center text-slate text-sm"
         >
           <p>
             {t.footer.copyright}

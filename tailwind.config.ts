@@ -7,7 +7,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: '#1e40af', // deep blue
+        accent: '#F5A623', // zlatno-bakarna akcentna boja
+        navy: '#0A192F', // glavna tamna pozadina
+        'navy-light': '#112240', // sekundarna pozadina (sekcije)
+        lightest: '#CCD6F6', // glavni tekst, beli sa plavicastim tonom
+        slate: '#8892B0', // sekundarni / opisni tekst
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

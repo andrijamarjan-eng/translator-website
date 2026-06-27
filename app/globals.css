@@ -4,19 +4,19 @@
 
 @layer base {
   body {
-    @apply bg-white;
+    @apply bg-navy;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-lightest;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    @apply text-3xl md:text-4xl font-bold tracking-tight text-lightest;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-xl md:text-2xl font-semibold text-lightest;
   }
 }
 
@@ -26,15 +26,15 @@
   }
 
   .btn-primary {
-    @apply px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-blue-900 transition-colors duration-300 shadow-lg hover:shadow-xl;
+    @apply px-8 py-4 bg-accent text-navy font-semibold rounded-lg hover:opacity-90 transition-opacity duration-300 shadow-lg hover:shadow-xl;
   }
 
   .btn-secondary {
-    @apply px-8 py-4 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-300;
+    @apply px-8 py-4 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-colors duration-300;
   }
 
   .info-card {
-    @apply bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300;
+    @apply bg-white/[0.03] border border-white/10 rounded-xl p-6 sm:p-8 hover:border-accent/60 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300;
   }
 
   .section-padding {
@@ -46,9 +46,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Smooth scrolling for mobile */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
+}
+
+::selection {
+  background-color: #F5A623;
+  color: #0A192F;
 }

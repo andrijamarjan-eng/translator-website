@@ -62,7 +62,7 @@ export default function Pricing({ language }: { language: Language }) {
   }
 
   return (
-    <section id="prices" className="section-padding bg-gray-50">
+    <section id="prices" className="section-padding bg-navy-light">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
@@ -72,8 +72,8 @@ export default function Pricing({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">{t.pricing.title}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="mb-4">{t.pricing.title}</h2>
+          <p className="text-lg text-slate max-w-2xl mx-auto">
             {t.pricing.subtitle}
           </p>
         </motion.div>
@@ -92,20 +92,20 @@ export default function Pricing({ language }: { language: Language }) {
               variants={itemVariants}
               className={`rounded-xl p-8 flex flex-col ${
                 plan.highlighted
-                  ? 'bg-accent text-white border-2 border-accent shadow-2xl scale-105 md:scale-100'
-                  : 'bg-white border border-gray-200 text-gray-900 shadow-sm hover:shadow-lg'
+                  ? 'bg-accent text-navy border-2 border-accent shadow-2xl shadow-accent/20 scale-105 md:scale-100'
+                  : 'bg-white/[0.03] border border-white/10 text-lightest hover:border-accent/40 hover:shadow-lg'
               } transition-all duration-300`}
             >
               {/* Plan Name */}
               <h3 className={`text-xl font-semibold mb-2 ${
-                plan.highlighted ? 'text-white' : 'text-gray-900'
+                plan.highlighted ? 'text-navy' : 'text-lightest'
               }`}>
                 {plan.name}
               </h3>
 
               {/* Description */}
               <p className={`text-sm mb-6 ${
-                plan.highlighted ? 'text-blue-100' : 'text-gray-600'
+                plan.highlighted ? 'text-navy/80' : 'text-slate'
               }`}>
                 {plan.description}
               </p>
@@ -113,12 +113,12 @@ export default function Pricing({ language }: { language: Language }) {
               {/* Price */}
               <div className="mb-8">
                 <div className={`text-3xl sm:text-4xl font-bold ${
-                  plan.highlighted ? 'text-white' : 'text-accent'
+                  plan.highlighted ? 'text-navy' : 'text-accent'
                 }`}>
                   {plan.price}
                 </div>
                 <div className={`text-sm ${
-                  plan.highlighted ? 'text-blue-100' : 'text-gray-600'
+                  plan.highlighted ? 'text-navy/70' : 'text-slate'
                 }`}>
                   {plan.unit}
                 </div>
@@ -129,10 +129,10 @@ export default function Pricing({ language }: { language: Language }) {
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                      plan.highlighted ? 'text-blue-100' : 'text-accent'
+                      plan.highlighted ? 'text-navy' : 'text-accent'
                     }`} />
                     <span className={`text-sm ${
-                      plan.highlighted ? 'text-blue-100' : 'text-gray-700'
+                      plan.highlighted ? 'text-navy/90' : 'text-slate'
                     }`}>
                       {feature}
                     </span>
@@ -145,8 +145,8 @@ export default function Pricing({ language }: { language: Language }) {
                 href="tel:+381641234567"
                 className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 ${
                   plan.highlighted
-                    ? 'bg-white text-accent hover:bg-blue-50'
-                    : 'bg-accent text-white hover:bg-blue-900'
+                    ? 'bg-navy text-accent hover:bg-navy-light'
+                    : 'bg-accent text-navy hover:opacity-90'
                 }`}
               >
                 <Phone size={18} />
@@ -164,7 +164,7 @@ export default function Pricing({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="text-center mt-12 sm:mt-16"
         >
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-slate max-w-2xl mx-auto">
             {t.pricing.note}
           </p>
         </motion.div>

@@ -37,7 +37,7 @@ export default function Contact({ language }: { language: Language }) {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section id="contact" className="section-padding bg-navy">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
@@ -47,8 +47,8 @@ export default function Contact({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">{t.contact.title}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="mb-4">{t.contact.title}</h2>
+          <p className="text-lg text-slate max-w-2xl mx-auto">
             {t.contact.subtitle}
           </p>
         </motion.div>
@@ -71,10 +71,10 @@ export default function Contact({ language }: { language: Language }) {
                       <Icon className="w-8 h-8 text-accent flex-shrink-0" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      <h3 className="text-lg font-semibold text-lightest mb-2">
                         {info.label}
                       </h3>
-                      <p className="text-gray-600 whitespace-pre-wrap">
+                      <p className="text-slate whitespace-pre-wrap">
                         {info.value}
                       </p>
                     </div>

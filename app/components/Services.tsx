@@ -48,7 +48,7 @@ export default function Services({ language }: { language: Language }) {
   }
 
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <section id="services" className="section-padding bg-navy-light">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
@@ -58,8 +58,8 @@ export default function Services({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-gray-900 mb-4">{t.services.title}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="mb-4">{t.services.title}</h2>
+          <p className="text-lg text-slate max-w-2xl mx-auto">
             {t.services.subtitle}
           </p>
         </motion.div>
@@ -81,10 +81,10 @@ export default function Services({ language }: { language: Language }) {
                 className="info-card group"
               >
                 <Icon className="w-10 h-10 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-lightest mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-slate leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>

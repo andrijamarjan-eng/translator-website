@@ -25,7 +25,7 @@ export default function Header({
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
+    <header className="fixed top-0 w-full bg-navy/95 backdrop-blur-sm border-b border-white/10 z-50 shadow-sm">
       <div className="container-wide flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <a href="#home" className="text-lg sm:text-xl font-bold text-accent">
@@ -38,7 +38,7 @@ export default function Header({
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-700 hover:text-accent transition-colors duration-300 font-medium"
+              className="text-slate hover:text-accent transition-colors duration-300 font-medium"
             >
               {item.label}
             </a>
@@ -54,8 +54,8 @@ export default function Header({
                 onClick={() => setLanguage(lang)}
                 className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
                   language === lang
-                    ? 'bg-accent text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-accent text-navy'
+                    : 'bg-navy-light text-slate hover:bg-white/10'
                 }`}
               >
                 {lang.toUpperCase()}
@@ -88,14 +88,14 @@ export default function Header({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-white border-t border-gray-200"
+          className="md:hidden bg-navy border-t border-white/10"
         >
           <div className="container-wide py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-gray-700 hover:text-accent transition-colors duration-300 font-medium py-2"
+                className="block text-slate hover:text-accent transition-colors duration-300 font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -113,8 +113,8 @@ export default function Header({
                   }}
                   className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
                     language === lang
-                      ? 'bg-accent text-white'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      ? 'bg-accent text-navy'
+                      : 'bg-navy-light text-slate hover:bg-white/10'
                   }`}
                 >
                   {lang.toUpperCase()}
