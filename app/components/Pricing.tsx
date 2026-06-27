@@ -7,8 +7,8 @@ export default function Pricing() {
   const pricingPlans = [
     {
       name: 'Standard Translation',
-      price: '€0.05',
-      unit: 'per word',
+      price: '2.000',
+      unit: 'dinara per page',
       description: 'Professional translation quality',
       features: [
         'Accurate translation',
@@ -20,8 +20,8 @@ export default function Pricing() {
     },
     {
       name: 'Certified Translation',
-      price: '€0.08',
-      unit: 'per word',
+      price: '3.000',
+      unit: 'dinara per page',
       description: 'Official certified translations',
       features: [
         'Official certification',
@@ -34,8 +34,8 @@ export default function Pricing() {
     },
     {
       name: 'Urgent Service',
-      price: '€0.12',
-      unit: 'per word',
+      price: '4.000',
+      unit: 'dinara per page',
       description: 'Rush translation service',
       features: [
         'Same-day delivery',
@@ -160,7 +160,7 @@ export default function Pricing() {
               </ul>
 
               {/* CTA Button */}
-              <a
+              
                 href="tel:+381641234567"
                 className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 ${
                   plan.highlighted
