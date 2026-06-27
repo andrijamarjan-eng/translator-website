@@ -52,7 +52,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-gradient-to-r from-gray-100 to-gray-300">
+    <section id="home" className="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <div className="container-wide">
         {/* Headline */}
         <motion.div
@@ -61,10 +61,10 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="text-gray-900 mb-4 leading-tight">
+          <h1 className="text-white mb-4 leading-tight font-bold text-5xl sm:text-6xl lg:text-7xl">
             Professional German–Serbian<br />Translation Services
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light">
             Expert translations for documents, legal texts, business correspondence, and more. Fast turnaround, certified quality, competitive prices.
           </p>
         </motion.div>
@@ -82,11 +82,11 @@ export default function Hero() {
             const content = (
               <motion.div
                 variants={itemVariants}
-                className="info-card h-full flex flex-col items-center text-center hover:border-accent transition-colors duration-300"
+                className="bg-gray-800/50 backdrop-blur border border-gray-700 hover:border-accent rounded-xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 h-full flex flex-col items-center text-center"
               >
                 <Icon className="w-8 h-8 text-accent mb-4" />
-                <p className="text-sm text-gray-600 mb-2">{card.label}</p>
-                <p className="text-base sm:text-lg font-semibold text-gray-900 break-all">
+                <p className="text-sm text-gray-400 mb-2">{card.label}</p>
+                <p className="text-base sm:text-lg font-semibold text-white break-all">
                   {card.value}
                 </p>
               </motion.div>
@@ -110,11 +110,11 @@ export default function Hero() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
         >
-          <a href="tel:+381641234567" className="btn-primary text-center">
+          <a href="tel:+381641234567" className="btn-primary text-center hover:shadow-2xl transition-all">
             <Phone className="inline mr-2" size={20} />
             Call Now
           </a>
-          <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center">
+          <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center hover:shadow-2xl transition-all">
             <Mail className="inline mr-2" size={20} />
             Send Email
           </a>
