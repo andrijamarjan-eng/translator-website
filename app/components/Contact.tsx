@@ -14,8 +14,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'info@translator.rs',
-      href: 'mailto:info@translator.rs',
+      value: 'zorana.kozomaric@gmail.com',
+      href: 'mailto:zorana.kozomaric@gmail.com',
     },
     {
       icon: Clock,
@@ -26,8 +26,8 @@ export default function Contact() {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Čačak, Serbia',
-      href: 'https://maps.google.com/?q=%C4%8Ea%C4%8Dak+Serbia',
+      value: 'Knez miletina 32, Beograd',
+      href: 'https://maps.google.com/?q=Knez+miletina+32+Beograd+Serbia',
     },
   ]
 
@@ -77,7 +77,7 @@ export default function Contact() {
                 )
 
                 return info.href ? (
-                  <a
+                  
                     key={info.label}
                     href={info.href}
                     className="hover:text-accent transition-colors duration-300"
@@ -117,7 +117,7 @@ export default function Contact() {
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8632828932246!2d19.9!3d43.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475c6a7b1f1f1f1f%3A0x1f1f1f1f1f1f1f1f!2s%C4%8Ea%C4%8Dak%2C%20Serbia!5e0!3m2!1sen!2s!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.5!2d20.4!3d44.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a8b1f1f1f1f%3A0x1f1f1f1f1f1f1f1f!2sKnez%20Miletina%2032%2C%20Beograd!5e0!3m2!1sen!2s!4v1234567890"
               />
             </div>
           </motion.div>
