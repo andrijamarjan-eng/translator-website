@@ -14,7 +14,7 @@ export default function Hero() {
     {
       icon: Mail,
       label: 'Email Address',
-      value: 'zorana.kozomaric@gmai.com',
+      value: 'zorana.kozomaric@gmail.com',
       href: 'mailto:zorana.kozomaric@gmai.com',
     },
     {
