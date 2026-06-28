@@ -19,6 +19,7 @@ export default function Header({
   const t = translations[language]
   const navItems = [
     { label: t.nav.home, href: '#home' },
+    { label: t.nav.about, href: '#about' },
     { label: t.nav.services, href: '#services' },
     { label: t.nav.prices, href: '#prices' },
     { label: t.nav.contact, href: '#contact' },
@@ -64,7 +65,7 @@ export default function Header({
           </div>
 
           <a
-            href="tel:+381641234567"
+            href="tel:+381641531165"
             className="flex items-center gap-2 btn-primary"
           >
             <Phone size={20} />
@@ -123,7 +124,7 @@ export default function Header({
             </div>
 
             <a
-              href="tel:+381641234567"
+              href="tel:+381641531165"
               className="block w-full text-center btn-primary mt-4"
               onClick={() => setIsOpen(false)}
             >

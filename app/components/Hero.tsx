@@ -13,8 +13,8 @@ export default function Hero({ language }: { language: Language }) {
     {
       icon: Phone,
       label: t.hero.phone,
-      value: '+381 64 123 4567',
-      href: 'tel:+381641234567',
+      value: '+381 64 153 1165',
+      href: 'tel:+381641531165',
     },
     {
       icon: Mail,
@@ -31,7 +31,7 @@ export default function Hero({ language }: { language: Language }) {
     {
       icon: DollarSign,
       label: t.hero.prices,
-      value: 'From 2.000 dinara',
+      value: '2.000 din / strana',
       href: '#prices',
     },
   ]
@@ -115,7 +115,7 @@ export default function Hero({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
         >
-          <a href="tel:+381641234567" className="btn-primary text-center hover:shadow-2xl transition-all">
+          <a href="tel:+381641531165" className="btn-primary text-center hover:shadow-2xl transition-all">
             <Phone className="inline mr-2" size={20} />
             {t.hero.callNow}
           </a>

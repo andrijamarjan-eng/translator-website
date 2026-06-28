@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Check, Phone } from 'lucide-react'
+import { Phone, Stamp, Zap, GraduationCap, PenTool } from 'lucide-react'
 import { translations } from '../translations'
 
 type Language = 'sr' | 'de' | 'en'
@@ -11,33 +11,33 @@ export default function Pricing({ language }: { language: Language }) {
 
   const pricingPlans = [
     {
-      name: t.pricing.standard,
-      price: '2.000',
-      unit: 'dinara per page',
-      description: t.pricing.standard_desc,
-      features: ['Accurate translation', 'Professional quality', '2-3 day turnaround', 'Unlimited revisions', 'Competitive rates'],
-    },
-    {
-      name: t.pricing.certified,
-      price: '3.000',
-      unit: 'dinara per page',
-      description: t.pricing.certified_desc,
-      features: ['Official certification', 'Legal documents support', '24-48 hour turnaround', 'Stamped & notarized', 'Government approved'],
+      icon: Stamp,
+      name: t.pricing.documents,
+      price: t.pricing.documents_price,
+      unit: t.pricing.documents_unit,
+      description: t.pricing.documents_desc,
       highlighted: true,
     },
     {
+      icon: Zap,
       name: t.pricing.urgent,
-      price: '4.000',
-      unit: 'dinara per page',
+      price: t.pricing.byArrangement,
+      unit: '',
       description: t.pricing.urgent_desc,
-      features: ['Same-day delivery', 'Priority handling', 'Premium quality', '24/7 availability', 'Direct communication'],
     },
     {
-      name: t.pricing.custom,
-      price: 'Custom',
-      unit: 'Negotiable',
-      description: t.pricing.custom_desc,
-      features: ['Volume discounts', 'Long-term contracts', 'Specialized terminology', 'Project management', 'Bulk pricing'],
+      icon: GraduationCap,
+      name: t.pricing.academic,
+      price: t.pricing.byArrangement,
+      unit: '',
+      description: t.pricing.academic_desc,
+    },
+    {
+      icon: PenTool,
+      name: t.pricing.proofreading,
+      price: t.pricing.byArrangement,
+      unit: '',
+      description: t.pricing.proofreading_desc,
     },
   ]
 
@@ -62,7 +62,7 @@ export default function Pricing({ language }: { language: Language }) {
   }
 
   return (
-    <section id="prices" className="section-padding bg-navy-light">
+    <section id="prices" className="section-padding bg-navy">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
@@ -86,74 +86,65 @@ export default function Pricing({ language }: { language: Language }) {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {pricingPlans.map((plan) => (
-            <motion.div
-              key={plan.name}
-              variants={itemVariants}
-              className={`rounded-xl p-8 flex flex-col ${
-                plan.highlighted
-                  ? 'bg-accent text-navy border-2 border-accent shadow-2xl shadow-accent/20 scale-105 md:scale-100'
-                  : 'bg-white/[0.03] border border-white/10 text-lightest hover:border-accent/40 hover:shadow-lg'
-              } transition-all duration-300`}
-            >
-              {/* Plan Name */}
-              <h3 className={`text-xl font-semibold mb-2 ${
-                plan.highlighted ? 'text-navy' : 'text-lightest'
-              }`}>
-                {plan.name}
-              </h3>
-
-              {/* Description */}
-              <p className={`text-sm mb-6 ${
-                plan.highlighted ? 'text-navy/80' : 'text-slate'
-              }`}>
-                {plan.description}
-              </p>
-
-              {/* Price */}
-              <div className="mb-8">
-                <div className={`text-3xl sm:text-4xl font-bold ${
-                  plan.highlighted ? 'text-navy' : 'text-accent'
-                }`}>
-                  {plan.price}
-                </div>
-                <div className={`text-sm ${
-                  plan.highlighted ? 'text-navy/70' : 'text-slate'
-                }`}>
-                  {plan.unit}
-                </div>
-              </div>
-
-              {/* Features List */}
-              <ul className="space-y-3 mb-8 flex-grow">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                      plan.highlighted ? 'text-navy' : 'text-accent'
-                    }`} />
-                    <span className={`text-sm ${
-                      plan.highlighted ? 'text-navy/90' : 'text-slate'
-                    }`}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA Button */}
-              <a
-                href="tel:+381641234567"
-                className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 ${
+          {pricingPlans.map((plan) => {
+            const Icon = plan.icon
+            return (
+              <motion.div
+                key={plan.name}
+                variants={itemVariants}
+                className={`rounded-xl p-8 flex flex-col ${
                   plan.highlighted
-                    ? 'bg-navy text-accent hover:bg-navy-light'
-                    : 'bg-accent text-navy hover:opacity-90'
-                }`}
+                    ? 'bg-accent text-navy border-2 border-accent shadow-2xl shadow-accent/20 scale-105 md:scale-100'
+                    : 'bg-white/[0.03] border border-white/10 text-lightest hover:border-accent/40 hover:shadow-lg'
+                } transition-all duration-300`}
               >
-                <Phone size={18} />
-                {t.pricing.contact}
-              </a>
-            </motion.div>
-          ))}
+                <Icon className={`w-8 h-8 mb-4 ${plan.highlighted ? 'text-navy' : 'text-accent'}`} />
+
+                {/* Plan Name */}
+                <h3 className={`text-xl font-semibold mb-2 ${
+                  plan.highlighted ? 'text-navy' : 'text-lightest'
+                }`}>
+                  {plan.name}
+                </h3>
+
+                {/* Description */}
+                <p className={`text-sm mb-6 flex-grow ${
+                  plan.highlighted ? 'text-navy/80' : 'text-slate'
+                }`}>
+                  {plan.description}
+                </p>
+
+                {/* Price */}
+                <div className="mb-6">
+                  <div className={`text-2xl sm:text-3xl font-bold ${
+                    plan.highlighted ? 'text-navy' : 'text-accent'
+                  }`}>
+                    {plan.price}
+                  </div>
+                  {plan.unit && (
+                    <div className={`text-sm ${
+                      plan.highlighted ? 'text-navy/70' : 'text-slate'
+                    }`}>
+                      {plan.unit}
+                    </div>
+                  )}
+                </div>
+
+                {/* CTA Button */}
+                <a
+                  href="tel:+381641531165"
+                  className={`w-full py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2 ${
+                    plan.highlighted
+                      ? 'bg-navy text-accent hover:bg-navy-light'
+                      : 'bg-accent text-navy hover:opacity-90'
+                  }`}
+                >
+                  <Phone size={18} />
+                  {t.pricing.contact}
+                </a>
+              </motion.div>
+            )
+          })}
         </motion.div>
 
         {/* Footer Note */}

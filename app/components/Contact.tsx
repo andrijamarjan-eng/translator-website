@@ -13,8 +13,8 @@ export default function Contact({ language }: { language: Language }) {
     {
       icon: Phone,
       label: t.contact.phone,
-      value: '+381 64 123 4567',
-      href: 'tel:+381641234567',
+      value: '+381 64 153 1165',
+      href: 'tel:+381641531165',
     },
     {
       icon: Mail,
@@ -37,7 +37,7 @@ export default function Contact({ language }: { language: Language }) {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-navy">
+    <section id="contact" className="section-padding bg-navy-light">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
@@ -97,7 +97,7 @@ export default function Contact({ language }: { language: Language }) {
 
             {/* CTA Button */}
             <motion.a
-              href="tel:+381641234567"
+              href="tel:+381641531165"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block btn-primary mt-10"

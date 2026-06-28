@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import About from './components/About'
 import Services from './components/Services'
 import WhyChoose from './components/WhyChoose'
 import Pricing from './components/Pricing'
@@ -28,6 +29,7 @@ export default function Home() {
     <main className="min-h-screen bg-navy">
       <Header language={language} setLanguage={handleLanguageChange} />
       <Hero language={language} />
+      <About language={language} />
       <Services language={language} />
       <WhyChoose language={language} />
       <Pricing language={language} />

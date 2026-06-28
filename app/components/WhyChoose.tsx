@@ -1,14 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import {
-  Star,
-  Zap,
-  MessageSquare,
-  CheckCircle,
-  Lock,
-  DollarSign,
-} from 'lucide-react'
+import { Award, ShieldCheck, GraduationCap, Plane, BookOpen, Lock } from 'lucide-react'
 import { translations } from '../translations'
 
 type Language = 'sr' | 'de' | 'en'
@@ -17,12 +10,12 @@ export default function WhyChoose({ language }: { language: Language }) {
   const t = translations[language]
 
   const benefits = [
-    { icon: Star, title: t.whyChoose.experience, description: t.whyChoose.experience_desc },
-    { icon: Zap, title: t.whyChoose.turnaround, description: t.whyChoose.turnaround_desc },
-    { icon: MessageSquare, title: t.whyChoose.communication, description: t.whyChoose.communication_desc },
-    { icon: CheckCircle, title: t.whyChoose.quality, description: t.whyChoose.quality_desc },
+    { icon: Award, title: t.whyChoose.experience, description: t.whyChoose.experience_desc },
+    { icon: ShieldCheck, title: t.whyChoose.certified, description: t.whyChoose.certified_desc },
+    { icon: GraduationCap, title: t.whyChoose.academic, description: t.whyChoose.academic_desc },
+    { icon: Plane, title: t.whyChoose.scholarships, description: t.whyChoose.scholarships_desc },
+    { icon: BookOpen, title: t.whyChoose.books, description: t.whyChoose.books_desc },
     { icon: Lock, title: t.whyChoose.confidentiality, description: t.whyChoose.confidentiality_desc },
-    { icon: DollarSign, title: t.whyChoose.prices, description: t.whyChoose.prices_desc },
   ]
 
   const containerVariants = {
@@ -46,7 +39,7 @@ export default function WhyChoose({ language }: { language: Language }) {
   }
 
   return (
-    <section className="section-padding bg-navy">
+    <section className="section-padding bg-navy-light">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div

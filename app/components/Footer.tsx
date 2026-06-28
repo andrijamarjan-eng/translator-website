@@ -24,11 +24,11 @@ export default function Footer({ language }: { language: Language }) {
             <h3 className="font-semibold text-lg mb-4">{t.footer.contact}</h3>
             <div className="space-y-3">
               <a
-                href="tel:+381641234567"
+                href="tel:+381641531165"
                 className="flex items-center gap-3 text-slate hover:text-accent transition-colors"
               >
                 <Phone size={18} />
-                +381 64 123 4567
+                +381 64 153 1165
               </a>
               <a
                 href="mailto:zorana.kozomaric@gmail.com"
@@ -63,6 +63,9 @@ export default function Footer({ language }: { language: Language }) {
             <div className="space-y-2">
               <a href="#home" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.home}
+              </a>
+              <a href="#about" className="block text-slate hover:text-accent transition-colors">
+                {t.footer.about}
               </a>
               <a href="#services" className="block text-slate hover:text-accent transition-colors">
                 {t.footer.services}

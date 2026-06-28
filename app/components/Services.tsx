@@ -2,12 +2,13 @@
 
 import { motion } from 'framer-motion'
 import {
-  ArrowLeftRight,
   Shield,
+  ArrowLeftRight,
+  GraduationCap,
+  BookMarked,
   FileText,
   Briefcase,
-  Users,
-  Zap,
+  PenTool,
 } from 'lucide-react'
 import { translations } from '../translations'
 
@@ -17,14 +18,14 @@ export default function Services({ language }: { language: Language }) {
   const t = translations[language]
 
   const services = [
+    { icon: Shield, title: t.services.certified, description: t.services.certified_desc },
     { icon: ArrowLeftRight, title: t.services.de_sr, description: t.services.de_sr_desc },
     { icon: ArrowLeftRight, title: t.services.sr_de, description: t.services.sr_de_desc },
-    { icon: Shield, title: t.services.certified, description: t.services.certified_desc },
-    { icon: FileText, title: t.services.legal, description: t.services.legal_desc },
-    { icon: Users, title: t.services.personal, description: t.services.personal_desc },
+    { icon: GraduationCap, title: t.services.academic, description: t.services.academic_desc },
+    { icon: BookMarked, title: t.services.books, description: t.services.books_desc },
+    { icon: FileText, title: t.services.personal, description: t.services.personal_desc },
     { icon: Briefcase, title: t.services.business, description: t.services.business_desc },
-    { icon: Zap, title: t.services.technical, description: t.services.technical_desc },
-    { icon: FileText, title: t.services.other, description: t.services.other_desc },
+    { icon: PenTool, title: t.services.other, description: t.services.other_desc },
   ]
 
   const containerVariants = {
@@ -48,7 +49,7 @@ export default function Services({ language }: { language: Language }) {
   }
 
   return (
-    <section id="services" className="section-padding bg-navy-light">
+    <section id="services" className="section-padding bg-navy">
       <div className="container-wide">
         {/* Section Header */}
         <motion.div
