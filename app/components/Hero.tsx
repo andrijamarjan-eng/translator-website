@@ -70,9 +70,12 @@ export default function Hero({ language }: { language: Language }) {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="mb-4 leading-tight">
+          <h1 className="mb-3 leading-tight">
             {t.hero.title}
           </h1>
+          <p className="text-lg sm:text-xl font-semibold text-accent mb-4">
+            {t.hero.name}
+          </p>
           <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
             {t.hero.subtitle}
           </p>
