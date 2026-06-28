@@ -30,7 +30,7 @@ export default function Header({
       <div className="container-wide flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <a href="#home" className="text-lg sm:text-xl font-bold text-accent">
-          Translator.de-sr
+          Zorana Kozomarić
         </a>
 
         {/* Desktop Navigation */}
