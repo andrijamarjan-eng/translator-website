@@ -73,7 +73,7 @@ export default function Hero({ language }: { language: Language }) {
           <h1 className="mb-3 leading-tight">
             {t.hero.title}
           </h1>
-          <p className="text-lg sm:text-xl font-semibold text-accent mb-4">
+          <p className="text-2xl sm:text-3xl font-semibold text-accent mb-4">
             {t.hero.name}
           </p>
           <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
