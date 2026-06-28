@@ -29,8 +29,9 @@ export default function Header({
     <header className="fixed top-0 w-full bg-main/90 backdrop-blur-md border-b border-line z-50">
       <div className="container-wide flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
-        <a href="#home" className="text-lg sm:text-xl font-bold text-accent">
-          Zorana Kozomarić
+        <a href="#home" className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="ZK Logo" className="h-10 sm:h-12 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
