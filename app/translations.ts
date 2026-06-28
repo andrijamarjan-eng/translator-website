@@ -19,6 +19,8 @@ export const translations = {
       callNow: 'Pozovi sada',
       sendEmail: 'Pošalji email',
       priceValue: '2.000 din / strana',
+    },
+    about: {
       title: 'O prevodiocu',
       subtitle: 'Sudski tumač sa akademskom i književnom pozadinom',
       badge: 'Ovlašćeni sudski tumač',
@@ -130,6 +132,8 @@ export const translations = {
       callNow: 'Jetzt anrufen',
       sendEmail: 'E-Mail senden',
       priceValue: '2.000 Dinar / Seite',
+    },
+    about: {
       title: 'Über die Übersetzerin',
       subtitle: 'Gerichtsdolmetscherin mit akademischem und literarischem Hintergrund',
       badge: 'Vereidigte Gerichtsdolmetscherin',
@@ -241,6 +245,8 @@ export const translations = {
       callNow: 'Call Now',
       sendEmail: 'Send Email',
       priceValue: '2,000 RSD / page',
+    },
+    about: {
       title: 'About the Translator',
       subtitle: 'Court interpreter with an academic and literary background',
       badge: 'Certified Court Interpreter',
