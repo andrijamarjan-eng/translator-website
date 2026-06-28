@@ -26,7 +26,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-navy">
+    <main className="min-h-screen bg-main">
       <Header language={language} setLanguage={handleLanguageChange} />
       <Hero language={language} />
       <About language={language} />

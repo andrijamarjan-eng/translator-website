@@ -24,8 +24,10 @@ export default function About({ language }: { language: Language }) {
   ]
 
   return (
-    <section id="about" className="section-padding bg-navy-light">
-      <div className="container-wide">
+    <section id="about" className="relative overflow-hidden section-padding bg-surface">
+      <div className="glow-blob top-0 -right-32 w-[460px] h-[460px]" aria-hidden="true" />
+
+      <div className="container-wide relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -35,7 +37,7 @@ export default function About({ language }: { language: Language }) {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="mb-4">{t.about.title}</h2>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             {t.about.subtitle}
           </p>
         </motion.div>
@@ -54,13 +56,13 @@ export default function About({ language }: { language: Language }) {
               {t.about.badge}
             </div>
 
-            <p className="text-slate leading-relaxed">{t.about.bio1}</p>
-            <p className="text-slate leading-relaxed">{t.about.bio2}</p>
-            <p className="text-slate leading-relaxed">{t.about.bio3}</p>
+            <p className="text-body leading-relaxed">{t.about.bio1}</p>
+            <p className="text-body leading-relaxed">{t.about.bio2}</p>
+            <p className="text-body leading-relaxed">{t.about.bio3}</p>
 
             {/* Translated authors */}
             <div className="pt-4">
-              <h3 className="text-sm uppercase tracking-wide text-slate mb-3 flex items-center gap-2">
+              <h3 className="text-sm uppercase tracking-wide text-muted mb-3 flex items-center gap-2">
                 <BookOpen size={16} className="text-accent" />
                 {t.about.booksTitle}
               </h3>
@@ -68,7 +70,7 @@ export default function About({ language }: { language: Language }) {
                 {authors.map((author) => (
                   <span
                     key={author}
-                    className="text-sm text-lightest bg-white/[0.04] border border-white/10 rounded-full px-3 py-1"
+                    className="text-sm text-title bg-main border border-line rounded-full px-3 py-1"
                   >
                     {author}
                   </span>
@@ -83,13 +85,13 @@ export default function About({ language }: { language: Language }) {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white/[0.03] border border-white/10 rounded-xl p-6 sm:p-8 space-y-6"
+            className="info-card space-y-6"
           >
             <GraduationCap className="w-10 h-10 text-accent" />
             {stats.map((stat) => (
-              <div key={stat.label} className="border-t border-white/10 pt-4 first:border-t-0 first:pt-0">
+              <div key={stat.label} className="border-t border-line pt-4 first:border-t-0 first:pt-0">
                 <div className="text-3xl sm:text-4xl font-bold text-accent">{stat.value}</div>
-                <div className="text-sm text-slate mt-1">{stat.label}</div>
+                <div className="text-sm text-muted mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>

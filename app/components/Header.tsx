@@ -26,11 +26,11 @@ export default function Header({
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-navy/95 backdrop-blur-sm border-b border-white/10 z-50 shadow-sm">
+    <header className="fixed top-0 w-full bg-main/90 backdrop-blur-md border-b border-line z-50">
       <div className="container-wide flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
         <a href="#home" className="text-lg sm:text-xl font-bold text-accent">
-          Zorana Kozomarić
+          Translator.de-sr
         </a>
 
         {/* Desktop Navigation */}
@@ -39,7 +39,7 @@ export default function Header({
             <a
               key={item.label}
               href={item.href}
-              className="text-slate hover:text-accent transition-colors duration-300 font-medium"
+              className="text-body hover:text-accent transition-colors duration-300 font-medium"
             >
               {item.label}
             </a>
@@ -53,10 +53,10 @@ export default function Header({
               <button
                 key={lang}
                 onClick={() => setLanguage(lang)}
-                className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
+                className={`px-3 py-1 rounded text-sm font-semibold transition-colors duration-300 ${
                   language === lang
-                    ? 'bg-accent text-navy'
-                    : 'bg-navy-light text-slate hover:bg-white/10'
+                    ? 'bg-accent text-white'
+                    : 'bg-surface border border-line text-muted hover:border-accent hover:text-accent'
                 }`}
               >
                 {lang.toUpperCase()}
@@ -66,16 +66,16 @@ export default function Header({
 
           <a
             href="tel:+381641531165"
-            className="flex items-center gap-2 btn-primary"
+            className="flex items-center gap-2 btn-primary !px-6 !py-2.5"
           >
-            <Phone size={20} />
+            <Phone size={18} />
             {t.nav.callNow}
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 text-title"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -89,14 +89,14 @@ export default function Header({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-navy border-t border-white/10"
+          className="md:hidden bg-surface border-t border-line"
         >
           <div className="container-wide py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block text-slate hover:text-accent transition-colors duration-300 font-medium py-2"
+                className="block text-body hover:text-accent transition-colors duration-300 font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -112,10 +112,10 @@ export default function Header({
                     setLanguage(lang)
                     setIsOpen(false)
                   }}
-                  className={`px-3 py-1 rounded text-sm font-semibold transition-colors ${
+                  className={`px-3 py-1 rounded text-sm font-semibold transition-colors duration-300 ${
                     language === lang
-                      ? 'bg-accent text-navy'
-                      : 'bg-navy-light text-slate hover:bg-white/10'
+                      ? 'bg-accent text-white'
+                      : 'bg-main border border-line text-muted hover:border-accent hover:text-accent'
                   }`}
                 >
                   {lang.toUpperCase()}

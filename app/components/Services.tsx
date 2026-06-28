@@ -49,8 +49,10 @@ export default function Services({ language }: { language: Language }) {
   }
 
   return (
-    <section id="services" className="section-padding bg-navy">
-      <div className="container-wide">
+    <section id="services" className="relative overflow-hidden section-padding bg-main">
+      <div className="glow-blob top-1/4 -left-32 w-[440px] h-[440px]" aria-hidden="true" />
+
+      <div className="container-wide relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -60,7 +62,7 @@ export default function Services({ language }: { language: Language }) {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="mb-4">{t.services.title}</h2>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             {t.services.subtitle}
           </p>
         </motion.div>
@@ -82,10 +84,10 @@ export default function Services({ language }: { language: Language }) {
                 className="info-card group"
               >
                 <Icon className="w-10 h-10 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-lg font-semibold text-lightest mb-2">
+                <h3 className="text-lg font-semibold text-title mb-2">
                   {service.title}
                 </h3>
-                <p className="text-slate leading-relaxed">
+                <p className="text-body leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>

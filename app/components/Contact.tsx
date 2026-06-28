@@ -37,8 +37,10 @@ export default function Contact({ language }: { language: Language }) {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-navy-light">
-      <div className="container-wide">
+    <section id="contact" className="relative overflow-hidden section-padding bg-surface">
+      <div className="glow-blob top-10 -right-32 w-[440px] h-[440px]" aria-hidden="true" />
+
+      <div className="container-wide relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -48,7 +50,7 @@ export default function Contact({ language }: { language: Language }) {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="mb-4">{t.contact.title}</h2>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             {t.contact.subtitle}
           </p>
         </motion.div>
@@ -71,10 +73,10 @@ export default function Contact({ language }: { language: Language }) {
                       <Icon className="w-8 h-8 text-accent flex-shrink-0" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-lightest mb-2">
+                      <h3 className="text-lg font-semibold text-title mb-2">
                         {info.label}
                       </h3>
-                      <p className="text-slate whitespace-pre-wrap">
+                      <p className="text-body whitespace-pre-wrap">
                         {info.value}
                       </p>
                     </div>
@@ -85,7 +87,7 @@ export default function Contact({ language }: { language: Language }) {
                   <a
                     key={info.label}
                     href={info.href}
-                    className="hover:text-accent transition-colors duration-300"
+                    className="hover:opacity-80 transition-opacity duration-300"
                   >
                     {content}
                   </a>
@@ -114,7 +116,7 @@ export default function Contact({ language }: { language: Language }) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="rounded-xl overflow-hidden shadow-lg h-96">
+            <div className="rounded-2xl overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.03)] border border-line h-96">
               <iframe
                 width="100%"
                 height="100%"

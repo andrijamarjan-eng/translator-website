@@ -7,11 +7,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: '#F5A623', // zlatno-bakarna akcentna boja
-        navy: '#0A192F', // glavna tamna pozadina
-        'navy-light': '#112240', // sekundarna pozadina (sekcije)
-        lightest: '#CCD6F6', // glavni tekst, beli sa plavicastim tonom
-        slate: '#8892B0', // sekundarni / opisni tekst
+        accent: '#D97706',         // Primarna akcentna boja (zlatna)
+        'accent-hover': '#B45309', // Hover stanje za zlatne elemente
+        main: '#FAFAFA',           // Glavna pozadina stranice
+        surface: '#FFFFFF',        // Pozadina kartica / sekcija
+        title: '#18181B',          // Glavni naslovi (H1, H2, H3)
+        body: '#27272A',           // Tekst u paragrafima
+        muted: '#52525B',          // Manje vazni opisi i podnaslovi
+        line: '#E4E4E7',           // Suptilne linije i ivice kartica
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

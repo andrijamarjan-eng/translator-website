@@ -39,8 +39,10 @@ export default function WhyChoose({ language }: { language: Language }) {
   }
 
   return (
-    <section className="section-padding bg-navy-light">
-      <div className="container-wide">
+    <section className="relative overflow-hidden section-padding bg-surface">
+      <div className="glow-blob -top-20 -right-20 w-[400px] h-[400px]" aria-hidden="true" />
+
+      <div className="container-wide relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -50,7 +52,7 @@ export default function WhyChoose({ language }: { language: Language }) {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="mb-4">{t.whyChoose.title}</h2>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
+          <p className="text-lg text-muted max-w-2xl mx-auto">
             {t.whyChoose.subtitle}
           </p>
         </motion.div>
@@ -75,10 +77,10 @@ export default function WhyChoose({ language }: { language: Language }) {
                   <Icon className="w-8 h-8 text-accent flex-shrink-0 mt-1" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-lightest mb-2">
+                  <h3 className="text-lg font-semibold text-title mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate leading-relaxed">
+                  <p className="text-body leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

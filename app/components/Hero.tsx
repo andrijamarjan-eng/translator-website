@@ -57,8 +57,12 @@ export default function Hero({ language }: { language: Language }) {
   }
 
   return (
-    <section id="home" className="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-gradient-to-b from-navy via-navy-light to-navy">
-      <div className="container-wide">
+    <section id="home" className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-32 bg-main">
+      {/* Zlatni "glow" prelazi - dekorativni, ne smetaju citljivosti */}
+      <div className="glow-blob -top-40 -right-40 w-[520px] h-[520px]" aria-hidden="true" />
+      <div className="glow-blob top-1/3 -left-40 w-[420px] h-[420px]" aria-hidden="true" />
+
+      <div className="container-wide relative">
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -66,10 +70,10 @@ export default function Hero({ language }: { language: Language }) {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="text-lightest mb-4 leading-tight font-bold text-5xl sm:text-6xl lg:text-7xl">
+          <h1 className="mb-4 leading-tight">
             {t.hero.title}
           </h1>
-          <p className="text-lg sm:text-xl text-slate max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
             {t.hero.subtitle}
           </p>
         </motion.div>
@@ -87,11 +91,11 @@ export default function Hero({ language }: { language: Language }) {
             const content = (
               <motion.div
                 variants={itemVariants}
-                className="bg-white/[0.03] backdrop-blur border border-white/10 hover:border-accent/60 rounded-xl p-6 sm:p-8 shadow-none hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 h-full flex flex-col items-center text-center"
+                className="info-card h-full flex flex-col items-center text-center"
               >
                 <Icon className="w-8 h-8 text-accent mb-4" />
-                <p className="text-sm text-slate mb-2">{card.label}</p>
-                <p className="text-base sm:text-lg font-semibold text-lightest break-all">
+                <p className="text-sm text-muted mb-2">{card.label}</p>
+                <p className="text-base sm:text-lg font-semibold text-title break-all">
                   {card.value}
                 </p>
               </motion.div>
@@ -115,11 +119,11 @@ export default function Hero({ language }: { language: Language }) {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center"
         >
-          <a href="tel:+381641531165" className="btn-primary text-center hover:shadow-2xl transition-all">
+          <a href="tel:+381641531165" className="btn-primary text-center">
             <Phone className="inline mr-2" size={20} />
             {t.hero.callNow}
           </a>
-          <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center hover:shadow-2xl transition-all">
+          <a href="mailto:zorana.kozomaric@gmail.com" className="btn-secondary text-center">
             <Mail className="inline mr-2" size={20} />
             {t.hero.sendEmail}
           </a>
