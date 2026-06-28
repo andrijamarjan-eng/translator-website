@@ -9,8 +9,8 @@ const config: Config = {
       colors: {
         accent: '#D97706',         // Primarna akcentna boja (zlatna)
         'accent-hover': '#B45309', // Hover stanje za zlatne elemente
-        main: '#FAFAFA',           // Glavna pozadina stranice
-        surface: '#FFFFFF',        // Pozadina kartica / sekcija
+        main: '#F0F0EC,            // Glavna pozadina stranice
+        surface: '#FCFBF8',        // Pozadina kartica / sekcija
         title: '#18181B',          // Glavni naslovi (H1, H2, H3)
         body: '#27272A',           // Tekst u paragrafima
         muted: '#52525B',          // Manje vazni opisi i podnaslovi
