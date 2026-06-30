@@ -10,7 +10,7 @@ export const translations = {
     },
     hero: {
       title: 'Sudski tumač i prevodilac za nemački jezik',
-      name: 'prof. dr Zorana Kozomarić',
+      name: 'prof. Zorana Kozomarić',
       subtitle: 'Ovlašćeni sudski tumač sa više od 25 godina iskustva. Overeni prevodi dokumenata, stručnih tekstova i knjiga sa nemačkog na srpski i sa srpskog na nemački.',
       phone: 'Telefonski broj',
       email: 'Email',
@@ -123,7 +123,7 @@ export const translations = {
     },
     hero: {
       title: 'Gerichtsdolmetscherin und Übersetzerin für Deutsch',
-      name: 'prof. dr Zorana Kozomarić',
+      name: 'prof. Zorana Kozomarić',
       subtitle: 'Vereidigte Gerichtsdolmetscherin mit über 25 Jahren Erfahrung. Beglaubigte Übersetzungen von Dokumenten, Fachtexten und Büchern vom Deutschen ins Serbische und umgekehrt.',
       phone: 'Telefonnummer',
       email: 'E-Mail',
@@ -236,7 +236,7 @@ export const translations = {
     },
     hero: {
       title: 'Certified Court Interpreter & Translator for German',
-      name: 'prof. dr Zorana Kozomarić',
+      name: 'prof. Zorana Kozomarić',
       subtitle: 'Certified court interpreter with over 25 years of experience. Certified translations of documents, academic texts, and books from German to Serbian and vice versa.',
       phone: 'Phone Number',
       email: 'Email Address',
